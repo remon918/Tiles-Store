@@ -22,7 +22,6 @@ const data = [
 const PopularSection = () => {
   return (
     <section className="py-16 bg-[#f5f5f5] text-center px-6 md:px-16">
-      
       <div className="flex items-center justify-center gap-4 mb-12">
         <div className="h-[1px] w-25 md:w-130 bg-gray-300"></div>
 
@@ -36,7 +35,6 @@ const PopularSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {data.map((item, i) => (
           <div key={i} className="flex flex-col items-center text-center">
-            
             <div className="w-44 h-44 rounded-full border-[10px] border-gray-200 flex items-center justify-center mb-6 bg-white hover:shadow-lg cursor-pointer">
               <div className="text-gray-700 ">{item.icon}</div>
             </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const TilesCard = ({ tiles }) => {
-  const {id, image, title, price, inStock } = tiles;
+  const { id, image, title, price, inStock } = tiles;
 
   return (
     <Link href={`/tiles/${id}`}>
@@ -28,7 +28,6 @@ const TilesCard = ({ tiles }) => {
           </h2>
 
           <div className="flex justify-between items-center">
-            
             {inStock ? (
               <div className="mt-2">
                 <p className="text-cyan-600 md:text-lg text-sm font-medium md:font-bold">
@@ -38,7 +37,6 @@ const TilesCard = ({ tiles }) => {
                   </span>
                 </p>
                 <span className="md:hidden ">
-                  
                   <p className="text-xs font-medium text-green-500 animate-pulse">
                     ● In Stock
                   </p>

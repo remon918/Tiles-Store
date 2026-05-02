@@ -40,7 +40,6 @@ const Footer = () => {
         <p className="text-sm">✉️ info@dblceramics.com</p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-        {/* Logo + Social */}
           <div className=" md:block hidden">
         <h1 className="text-3xl font-bold text-white mb-2">dbl</h1>
         <p className="mb-4 text-sm">CERAMICS</p>
@@ -69,7 +68,6 @@ const Footer = () => {
         </span>
         <p className="text-sm">✉️ info@dblceramics.com</p>
       </div>
-        {/* Quick Links */}
         <div>
           <h2 className="text-white font-semibold mb-4">QUICK LINKS</h2>
           <ul className="space-y-2 text-sm">
@@ -90,7 +88,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* About Us */}
         <div>
           <h2 className="text-white font-semibold mb-4">ABOUT US</h2>
           <ul className="space-y-2 text-sm">
@@ -113,7 +110,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Customer Service */}
         <div>
           <h2 className="text-white font-semibold mb-4">CUSTOMER SERVICE</h2>
           <ul className="space-y-2 text-sm">
@@ -127,7 +123,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Office Info */}
         <div>
           <h2 className="text-white font-semibold mb-4">CORPORATE OFFICE</h2>
           <p className="text-sm mb-4">
@@ -137,7 +132,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-gray-500 mt-10 pt-4 flex flex-col md:flex-row justify-between items-center text-sm">
         <p>© 2026 DBL Ceramics Limited All rights reserved.</p>
         <div className="flex gap-4 mt-2 md:mt-0">

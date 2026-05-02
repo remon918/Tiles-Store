@@ -26,16 +26,17 @@ const TilesDetailsPage = async ({ params }) => {
   } = tile;
 
   return (
-    <div className="">
-      
+    <div className="w-[70%] mx-auto">
       <Link
-  href="/alltiles"
-  className="inline-flex mt-6 items-center gap-2 text-sm text-gray-700 hover:text-gray-900"
->
-  ← Back to all tiles
-</Link>
-      <h2 className="mt-10 text-2xl font-bold text-center mb-5 text-gray-800">About This Tiles</h2>
-      <hr className="opacity-15 w-[30%] mx-auto"/>
+        href="/alltiles"
+        className="inline-flex mt-6 items-center gap-2 text-sm text-gray-700 hover:text-gray-900"
+      >
+        ← Back to all tiles
+      </Link>
+      <h2 className="mt-10 text-2xl font-bold text-center mb-5 text-gray-800">
+        About This Tiles
+      </h2>
+      <hr className="opacity-15 w-[30%] mx-auto" />
       <div className="md:max-w-5xl max-w-3xl flex items-center justify-center bg-gray-100 mt-10">
         <div className="bg-white p-6 rounded-md shadow max-w-md w-full gap-4 grid grid-cols-2">
           <div className="flex justify-end">
@@ -49,18 +50,25 @@ const TilesDetailsPage = async ({ params }) => {
             />
           </div>
           <div className="space-y-2">
-            <h2 className="text-2xl flex justify-self-start font-semibold text-gray-800" >
+            <h2 className="text-2xl flex justify-self-start font-semibold text-gray-800">
               {title}
             </h2>
             <p className="text-gray-600">{description}</p>
             <p className="text-sm text-gray-500 uppercase tracking-widest mb-1">
               Category ● {material}
             </p>
-            <p className="font-semibold text-gray-600">Dimensions ● {dimensions}</p>
-            
-              <p className="text-cyan-600 md:text-lg text-sm font-medium md:font-bold">${price} {""} <span className="text-xs text-gray-500 font-normal">/per sqft</span> </p>
-              <p className="text-gray-600 text-sm">pay with {currency}</p>
-           
+            <p className="font-semibold text-gray-600">
+              Dimensions ● {dimensions}
+            </p>
+
+            <p className="text-cyan-600 md:text-lg text-sm font-medium md:font-bold">
+              ${price} {""}{" "}
+              <span className="text-xs text-gray-500 font-normal">
+                /per sqft
+              </span>{" "}
+            </p>
+            <p className="text-gray-600 text-sm">pay with {currency}</p>
+
             <span
               className={`text-sm italic font-semibold px-3 py-1 rounded-full ${
                 inStock == true
@@ -69,10 +77,12 @@ const TilesDetailsPage = async ({ params }) => {
               }`}
             >
               {inStock ? "● In Stock" : "● Out of Stock"}
-            </span>
+            </span> <br /> <br />
+            <button className="btn bg-pink-600  hover:bg-pink-500 text-white">Add to Cart</button>
           </div>
         </div>
       </div>
+
     </div>
   );
 };

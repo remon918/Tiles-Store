@@ -14,12 +14,9 @@ const particles = [
 export default function NotFound() {
   return (
     <main className="relative min-h-screen flex items-center justify-center bg-[#0a0a0f] overflow-hidden font-sans">
-
-      {/* Background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(99,37,210,0.15),transparent_60%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_80%,rgba(16,185,129,0.08),transparent_50%)] pointer-events-none" />
 
-      {/* Scanlines */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -28,7 +25,6 @@ export default function NotFound() {
         }}
       />
 
-      {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {particles.map((p, i) => (
           <span
@@ -39,10 +35,7 @@ export default function NotFound() {
         ))}
       </div>
 
-      {/* Main content */}
       <div className="relative z-10 text-center px-6 max-w-xl animate-fade-in">
-
-        {/* 404 glitch */}
         <div className="relative inline-block mb-8 select-none">
           <span
             className="glitch block font-mono font-bold text-white tracking-tighter text-[clamp(7rem,18vw,10rem)] leading-none"
@@ -52,21 +45,17 @@ export default function NotFound() {
           </span>
         </div>
 
-        {/* Divider */}
         <div className="w-14 h-0.5 mx-auto mb-8 rounded-full bg-linear-to-r from-purple-600 to-emerald-500" />
 
-        {/* Heading */}
         <h1 className="text-2xl md:text-3xl font-semibold text-[#f1f1f5] tracking-tight mb-4">
           পেইজটি খুঁজে পাওয়া যায়নি
         </h1>
 
-        {/* Subtext */}
         <p className="text-sm md:text-base font-light text-[#8b8b99] leading-relaxed mb-10">
           আপনি যে পেইজটি খুঁজছেন সেটি সরানো হয়েছে, নাম পরিবর্তন করা হয়েছে,
           অথবা কখনই ছিল না।
         </p>
 
-        {/* Buttons */}
         <div className="flex flex-wrap gap-4 justify-center">
           <Link
             href="/"

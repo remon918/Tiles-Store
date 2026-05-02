@@ -9,10 +9,8 @@ const Navbar = () => {
     <div className="pb-4 shadow-sm">
       <div className="flex justify-between items-center w-[97%] mx-auto md:w-[85%] mt-4 relative">
         <div className="flex items-center gap-1">
-          {/* Hamburger - only on small devices */}
           <DropDownMenu />
 
-          {/* Logo */}
           <h2 className="font-semibold text-lg md:font-bold text-blue-100 bg-linear-to-r from-purple-400 to-blue-500 p-1.5 md:px-5 px-2 rounded-md md:text-2xl">
             <Link href="/">
               <span className="text-amber-300">DBL</span> Ceramics
@@ -20,7 +18,6 @@ const Navbar = () => {
           </h2>
         </div>
 
-        {/* Desktop nav links */}
         <ul className="gap-7 md:gap-15 font-medium text-gray-700 md:flex hidden text-center">
           <li className="hover:bg-gray-200 p-2">
             <NavLink href={"/"}>Home</NavLink>
@@ -36,7 +33,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Avatar + Login */}
         <div className="flex justify-center items-center md:gap-3 gap-1">
           <Image
             className="mx-auto"

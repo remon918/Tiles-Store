@@ -15,7 +15,6 @@ const DropDownMenu = () => {
         <span className="block w-5 h-0.5 bg-gray-700"></span>
       </button>
 
-      {/* Dropdown Menu */}
       {menuOpen && (
         <ul className="absolute top-full left-0 mt-2 w-44 bg-gray-300 border border-gray-500 rounded-md shadow-lg z-500">
           <li className="border-b border-gray-700">
