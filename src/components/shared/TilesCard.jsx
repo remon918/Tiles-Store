@@ -12,7 +12,6 @@ const TilesCard = ({ tiles }) => {
                  transition-all duration-300 ease-in-out 
                  hover:-translate-y-2 hover:shadow-md hover:bg-cyan-50 cursor-pointer"
       >
-        {/* ইমেজের জন্য আলাদা কন্টেইনার */}
         <div className="relative w-full h-[180px] group overflow-hidden rounded-md">
           <Image
             className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -23,14 +22,13 @@ const TilesCard = ({ tiles }) => {
           />
         </div>
 
-        {/* টেক্সট সেকশন */}
         <div className="flex flex-col gap-1 p-1">
           <h2 className="text-lg font-semibold text-gray-700 line-clamp-1">
             {title}
           </h2>
 
           <div className="flex justify-between items-center">
-            {/* স্টক থাকলে প্রাইস দেখাবে, না থাকলে গ্রে কালারে Out of Stock */}
+            
             {inStock ? (
               <div className="mt-2">
                 <p className="text-cyan-600 md:text-lg text-sm font-medium md:font-bold">
@@ -51,8 +49,6 @@ const TilesCard = ({ tiles }) => {
                 ● Out of Stock
               </p>
             )}
-
-            {/* ডট ইন্ডিকেটর (অপশনাল: শুধু স্টকে থাকলেই দেখাবে) */}
             {inStock && (
               <div className="">
                 <p className="text-xs font-medium text-green-500 animate-pulse hidden md:block">
