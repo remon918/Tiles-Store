@@ -26,7 +26,7 @@ const tiles = [
 export default function Banner() {
   return (
     <section className="py-10 bg-white">
-      <h2 className="text-center text-2xl md:text-3xl font-semibold mb-8 tracking-wide">
+      <h2 className="text-center text-xl md:text-3xl font-semibold mb-8 tracking-wide">
         EXPLORE TILES COLLECTIONS BY CATEGORY
       </h2>
 

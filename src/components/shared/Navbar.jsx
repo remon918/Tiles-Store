@@ -13,7 +13,7 @@ const Navbar = () => {
           <DropDownMenu />
 
           {/* Logo */}
-          <h2 className="font-bold text-xl text-blue-100 bg-linear-to-r from-purple-400 to-blue-500 p-1.5 md:px-5 px-3 rounded-md">
+          <h2 className="font-semibold text-xl md:font-bold text-blue-100 bg-linear-to-r from-purple-400 to-blue-500 p-1 md:px-5 px-1.5 rounded-md">
             <Link href="/">
               <span className="text-amber-300">DBL</span> Ceramics
             </Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
         </ul>
 
         {/* Avatar + Login */}
-        <div className="flex justify-center items-center gap-2">
+        <div className="flex justify-center items-center md:gap-3 gap-1">
           <Image
             className="mx-auto"
             src={avatar}
@@ -45,10 +45,10 @@ const Navbar = () => {
             height={30}
             alt="avatar"
           />
-          <button className="btn bg-blue-500 text-white p-2 px-4 rounded-md hover:bg-blue-400">
+          <button className="btn bg-blue-500 text-white md:px-4 px-1 rounded-md hover:bg-blue-400">
             <Link href={"/login"}>Sign Up</Link>
           </button>
-          <button className="btn bg-purple-500 text-white p-2 px-4 rounded-md hover:bg-purple-400">
+          <button className="btn bg-purple-500 text-white p-2 md:px-4 rounded-md hover:bg-purple-400">
             <Link href={"/login"}>Login</Link>
           </button>
         </div>
