@@ -26,7 +26,7 @@ const TilesDetailsPage = async ({ params }) => {
   } = tile;
 
   return (
-    <div className="w-[70%] mx-auto">
+    <div className="md:w-[70%] w-[92%] mx-auto">
       <Link
         href="/alltiles"
         className="inline-flex mt-6 items-center gap-2 text-sm text-gray-700 hover:text-gray-900"
@@ -38,7 +38,7 @@ const TilesDetailsPage = async ({ params }) => {
       </h2>
       <hr className="opacity-15 w-[30%] mx-auto" />
       <div className="md:max-w-5xl max-w-3xl flex items-center justify-center bg-gray-100 mt-10">
-        <div className="bg-white p-6 rounded-md shadow max-w-md w-full gap-4 grid grid-cols-2">
+        <div className="bg-white p-6 rounded-md shadow gap-4 grid grid-cols-2">
           <div className="flex justify-end">
             <Image
               src={image}
