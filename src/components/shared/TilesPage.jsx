@@ -8,13 +8,13 @@ const TilesPage = async () => {
   return (
     <div className="max-w-7xl mx-auto px-4">
       <div className="flex items-center justify-center gap-4 my-8 md:my-15">
-        <div className="h-[1px] w-27 md:w-93 bg-gray-300"></div>
+        <div className="h-[1px] w-40 md:w-93 bg-gray-300"></div>
 
-        <h2 className="text-lg md:text-2xl font-semibold tracking-widest text-gray-800">
-          Explore Our Tiles Collection
+        <h2 className="text-xl md:text-2xl font-semibold tracking-widest text-gray-800">
+          Explore Our Tiles <br /> <span className="text-center flex justify-center">Collection</span>
         </h2>
 
-        <div className="h-[1px] w-27 md:w-93 bg-gray-300"></div>
+        <div className="h-[1px] w-40 md:w-93 bg-gray-300"></div>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-2">
         {topTiles.map((tiles) => (
