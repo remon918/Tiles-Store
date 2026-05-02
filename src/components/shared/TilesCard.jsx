@@ -6,9 +6,9 @@ const TilesCard = ({ tiles }) => {
   const { id, image, title, price, inStock } = tiles;
 
   return (
-    <Link href={`/tiles/${id}`}>
+    <Link href={`/tiles/${id}`} className="h-full">
       <div
-        className="flex flex-col gap-3 p-2 rounded-lg shadow-sm bg-white 
+        className="flex flex-col gap-3 p-2 rounded-lg shadow-sm bg-white h-full 
                  transition-all duration-300 ease-in-out 
                  hover:-translate-y-2 hover:shadow-md hover:bg-cyan-50 cursor-pointer"
       >

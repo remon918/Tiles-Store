@@ -34,19 +34,27 @@ const Navbar = () => {
         </ul>
 
         <div className="flex justify-center items-center md:gap-3 gap-1">
-          <Image
-            className="mx-auto"
-            src={avatar}
-            width={30}
-            height={30}
-            alt="avatar"
-          />
-          <button className="btn text-sm bg-blue-500 text-white md:px-4 px-1 py-0.5 rounded-md hover:bg-blue-400">
-            <Link href={"/login"}>Sign Up</Link>
-          </button>
-          <button className="btn bg-purple-500 text-white p-1.5 md:px-4 text-sm rounded-md hover:bg-purple-400">
-            <Link href={"/login"}>Login</Link>
-          </button>
+          <Link href={"/profile"}>
+            <Image
+              className="mx-auto"
+              src={avatar}
+              width={30}
+              height={30}
+              alt="avatar"
+            />
+          </Link>
+          <Link
+            href={"/signup"}
+            className="btn text-sm bg-blue-500 text-white md:px-4 px-1 py-0.5 rounded-md hover:bg-blue-400"
+          >
+            Sign Up
+          </Link>
+          <Link
+            href={"/login"}
+            className="btn bg-purple-500 text-white p-1.5 md:px-4 text-sm rounded-md hover:bg-purple-400"
+          >
+            Login
+          </Link>
         </div>
       </div>
     </div>
