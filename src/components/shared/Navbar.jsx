@@ -13,7 +13,7 @@ const Navbar = () => {
           <DropDownMenu />
 
           {/* Logo */}
-          <h2 className="font-bold text-md md:font-bold text-blue-100 bg-linear-to-r from-purple-400 to-blue-500 p-1 md:px-5 px-1.5 rounded-md md:text-2xl">
+          <h2 className="font-semibold text-lg md:font-bold text-blue-100 bg-linear-to-r from-purple-400 to-blue-500 p-1.5 md:px-5 px-2 rounded-md md:text-2xl">
             <Link href="/">
               <span className="text-amber-300">DBL</span> Ceramics
             </Link>
