@@ -6,7 +6,7 @@ import DropDownMenu from "./DropDownMenu";
 
 const Navbar = () => {
   return (
-    <div className="pb-4 shadow-md">
+    <div className="pb-4 shadow-sm">
       <div className="flex justify-between items-center w-[93%] mx-auto md:w-[85%] mt-4 relative">
         <div className="flex items-center gap-3">
           {/* Hamburger - only on small devices */}
