@@ -1,12 +1,12 @@
 import TilesPage from '@/components/shared/TilesPage';
 import React from 'react';
 
-const AllTilesSection = () => {
+const page = () => {
     return (
         <div>
-            
+            <TilesPage />
         </div>
     );
 };
 
-export default AllTilesSection;
+export default page;

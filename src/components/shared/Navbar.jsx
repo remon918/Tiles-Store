@@ -26,7 +26,7 @@ const Navbar = () => {
             <NavLink href={"/"}>Home</NavLink>
           </li>
           <li className="hover:bg-gray-200 p-2">
-            <NavLink href={"/alltilessection"}>All Tiles</NavLink>
+            <NavLink href={"/alltiles"}>All Tiles</NavLink>
           </li>
           <li className="hover:bg-gray-200 p-2">
             <NavLink href={"/tiles-cart"}>Tiles cart</NavLink>

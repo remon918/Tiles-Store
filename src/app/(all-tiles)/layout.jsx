@@ -1,7 +1,7 @@
 import Navbar from '@/components/shared/Navbar';
 import React from 'react';
 
-const AllTilesSectionLayout = ({children}) => {
+const allLayout = ({children}) => {
     return (
         <>
             <Navbar />
@@ -10,4 +10,4 @@ const AllTilesSectionLayout = ({children}) => {
     );
 };
 
-export default AllTilesSectionLayout;
+export default allLayout;

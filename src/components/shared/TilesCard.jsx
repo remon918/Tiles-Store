@@ -3,10 +3,10 @@ import Link from "next/link";
 import React from "react";
 
 const TilesCard = ({ tiles }) => {
-  const { image, title, price, inStock } = tiles;
+  const {id, image, title, price, inStock } = tiles;
 
   return (
-    <Link href={`/tiles/${""}`}>
+    <Link href={`/tiles/${id}`}>
       <div
         className="flex flex-col gap-3 p-2 rounded-lg shadow-sm bg-white 
                  transition-all duration-300 ease-in-out 
