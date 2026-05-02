@@ -31,36 +31,31 @@ export default function Banner() {
       </h2>
 
       <div className="max-w-7xl mx-auto px-4">
-        
         {/* Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {tiles.map((tile, index) => (
             <div
               key={index}
-              className="bg-white p-3 rounded shadow-sm group"
+              className="bg-white p-3 rounded shadow-sm transition-all duration-300 ease-in-out 
+                    hover:-translate-y-1 hover:shadow-md
+                    hover:bg-cyan-50"
             >
-              <div className="relative w-full h-[180px]">
+              <div className="relative w-full h-[180px] group overflow-hidden">
                 <Image
                   src={tile.img}
                   alt={tile.title}
                   fill
-                  className="object-cover rounded transition-transform duration-300 group-hover:scale-107"
+                  className="object-cover rounded transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
                 />
               </div>
 
-              <h3 className="text-center mt-4 text-lg">
-                {tile.title}
-              </h3>
+              <h3 className="text-center mt-4 text-lg">{tile.title}</h3>
 
               <div className="w-8 h-[2px] bg-green-500 mx-auto my-2"></div>
-
-              <p className="text-center text-blue-600 text-sm cursor-pointer">
-                VIEW DETAILS
-              </p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

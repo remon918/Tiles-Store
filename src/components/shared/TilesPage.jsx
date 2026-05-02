@@ -16,10 +16,10 @@ const TilesPage = async () => {
 
         <div className="h-[1px] w-27 md:w-93 bg-gray-300"></div>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-        {topTiles.map((tiles) => 
-          <TilesCard key={tiles.id} tiles={tiles}/>
-        )}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-2">
+        {topTiles.map((tiles) => (
+          <TilesCard key={tiles.id} tiles={tiles} />
+        ))}
       </div>
     </div>
   );
