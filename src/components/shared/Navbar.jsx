@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="pb-4 shadow-sm">
       <div className="flex justify-between items-center w-[97%] mx-auto md:w-[85%] mt-4 relative">
-        <div className="flex items-center gap-1 md:gap-3">
+        <div className="flex items-center gap-1">
           {/* Hamburger - only on small devices */}
           <DropDownMenu />
 
@@ -26,7 +26,7 @@ const Navbar = () => {
             <NavLink href={"/"}>Home</NavLink>
           </li>
           <li className="hover:bg-gray-200 p-2">
-            <NavLink href={"/tiles"}>All Tiles</NavLink>
+            <NavLink href={"/alltilessection"}>All Tiles</NavLink>
           </li>
           <li className="hover:bg-gray-200 p-2">
             <NavLink href={"/tiles-cart"}>Tiles cart</NavLink>

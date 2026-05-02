@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const TilesCard = ({ tiles }) => {
   const { image, title, price, inStock } = tiles;
 
   return (
+    <Link href={`/tiles/${""}`} >
     <div
       className="flex flex-col gap-3 p-2 rounded-lg shadow-sm bg-white 
                  transition-all duration-300 ease-in-out 
@@ -56,6 +58,7 @@ const TilesCard = ({ tiles }) => {
         VIEW DETAILS
       </p>
     </div>
+    </Link>
   );
 };
 
