@@ -3,7 +3,7 @@
     "id": "tile_001",
     "title": "Ceramic Blue Tile",
     "description": "Premium ceramic tile with glossy blue glaze",
-    "image": "/images/tiles/tile_001.jpg",
+    "image": "https://i.ibb.co.com/35xydLZc/tile1.jpg",
     "category": "ceramic",
     "price": 45.99,
     "currency": "USD",

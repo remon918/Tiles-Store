@@ -4,6 +4,7 @@ import PopularSection from "@/components/shared/PopularSection";
 import AboutUs from "@/components/shared/AboutUs";
 import Banner from "@/components/shared/Banner";
 import Offers from "@/components/shared/Offers";
+import TilesPage from "@/components/shared/TilesPage";
 
 const MainLayout = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const MainLayout = ({ children }) => {
       <Navbar />
       <Offers />
       <Banner />
+      <TilesPage />
       {children}
       <PopularSection />
       <AboutUs />
