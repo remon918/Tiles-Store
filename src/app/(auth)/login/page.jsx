@@ -37,7 +37,7 @@ console.log(watch("email"))
 
           <div className="divider my-0" />
 
-          <form onSubmit={handleSubmit(handleLoginFunction)}>
+          <form className="space-y-2" onSubmit={handleSubmit(handleLoginFunction)}>
             <fieldset className="fieldset">
               <label className="label py-0">
                 <span className="label-text font-medium flex items-center text-gray-700 gap-2">

@@ -51,7 +51,7 @@ export default function SignUpPage() {
 
           <div className="divider my-0" />
 
-          <form onSubmit={handleSubmit(handleSignUpFunction)}>
+          <form className="space-y-2" onSubmit={handleSubmit(handleSignUpFunction)}>
             <fieldset>
               <label className="label py-0">
                 <span className="label-text text-gray-700 font-medium flex items-center gap-2">
