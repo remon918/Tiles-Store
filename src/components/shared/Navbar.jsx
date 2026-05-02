@@ -13,7 +13,7 @@ const Navbar = () => {
           <DropDownMenu />
 
           {/* Logo */}
-          <h2 className="font-semibold text-xl md:font-bold text-blue-100 bg-linear-to-r from-purple-400 to-blue-500 p-1 md:px-5 px-1.5 rounded-md">
+          <h2 className="font-bold text-md md:font-bold text-blue-100 bg-linear-to-r from-purple-400 to-blue-500 p-1 md:px-5 px-1.5 rounded-md md:text-2xl">
             <Link href="/">
               <span className="text-amber-300">DBL</span> Ceramics
             </Link>
@@ -45,10 +45,10 @@ const Navbar = () => {
             height={30}
             alt="avatar"
           />
-          <button className="btn bg-blue-500 text-white md:px-4 px-1 rounded-md hover:bg-blue-400">
+          <button className="btn text-sm bg-blue-500 text-white md:px-4 px-1 py-0.5 rounded-md hover:bg-blue-400">
             <Link href={"/login"}>Sign Up</Link>
           </button>
-          <button className="btn bg-purple-500 text-white p-2 md:px-4 rounded-md hover:bg-purple-400">
+          <button className="btn bg-purple-500 text-white p-1.5 md:px-4 text-sm rounded-md hover:bg-purple-400">
             <Link href={"/login"}>Login</Link>
           </button>
         </div>
