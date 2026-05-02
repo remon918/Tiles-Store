@@ -10,7 +10,7 @@ const TilesPage = async () => {
       <div className="flex items-center justify-center gap-4 my-8 md:my-15">
         <div className="h-[1px] w-27 md:w-93 bg-gray-300"></div>
 
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-widest text-gray-800">
+        <h2 className="text-lg md:text-2xl font-semibold tracking-widest text-gray-800">
           Explore Our Tiles Collection
         </h2>
 
