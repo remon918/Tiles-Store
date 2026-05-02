@@ -17,6 +17,7 @@ const TilesCard = ({ tiles }) => {
           src={image}
           alt={title}
           fill
+          sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
         />
       </div>
 
@@ -29,10 +30,10 @@ const TilesCard = ({ tiles }) => {
         <div className="flex justify-between items-center h-8">
           {/* স্টক থাকলে প্রাইস দেখাবে, না থাকলে গ্রে কালারে Out of Stock */}
           {inStock ? (
-            <p className="text-cyan-600 font-bold">
-              ${price}{" "}
+            <p className="text-cyan-600 text-sm font-medium">
+              ${price} {""}
               <span className="text-xs text-gray-500 font-normal">
-                / per sqft
+                /per sqft
               </span>
             </p>
           ) : (
