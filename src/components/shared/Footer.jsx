@@ -106,6 +106,11 @@ const Footer = () => {
               </li>
             ))}
           </ul>
+          <br />
+          <div className="">
+            <h2 className="text-white font-semibold mb-2">FACTORY</h2>
+            <p className="text-sm">Dhanua, Sreepur, Gazipur, Bangladesh</p>
+          </div>
         </div>
 
         {/* Customer Service */}
@@ -128,10 +133,7 @@ const Footer = () => {
           <p className="text-sm mb-4">
             2nd Floor, House 10, Road 04, Gulshan 1, Dhaka 1212, Bangladesh
           </p>
-          <div className="">
-            <h2 className="text-white font-semibold mb-2">FACTORY</h2>
-            <p className="text-sm">Dhanua, Sreepur, Gazipur, Bangladesh</p>
-          </div>
+          
         </div>
       </div>
 
