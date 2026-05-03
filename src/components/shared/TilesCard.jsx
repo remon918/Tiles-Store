@@ -11,7 +11,7 @@ const TilesCard = ({ tiles }) => {
         className="flex flex-col gap-3 p-2 rounded-lg shadow-sm bg-white h-full 
                  transition-all duration-300 ease-in-out 
                  hover:-translate-y-2 hover:shadow-md hover:bg-cyan-50 cursor-pointer"
-      >
+      > 
         <div className="relative w-full h-[180px] group overflow-hidden rounded-md">
           <Image
             className="object-cover transition-transform duration-500 group-hover:scale-110"
