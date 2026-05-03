@@ -2,6 +2,7 @@
 
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   FaUser,
@@ -11,9 +12,19 @@ import {
   FaCheck,
   FaEye,
   FaRotateLeft,
+  FaRegEyeSlash,
+  FaEyeSlash,
 } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
 export default function SignUpPage() {
+
+  const HandleGoogleSignIn = async() =>{
+   const data = await authClient.signIn.social({
+    provider: "google",})
+    console.log(data, "data")
+  }
+
   const {
     register,
     watch,
@@ -21,12 +32,12 @@ export default function SignUpPage() {
     formState: { errors },
   } = useForm();
   // console.log(watch("email"));
+  const [isShowPass, setIsShowPass] = useState(false);
   const handleSignUpFunction = async (data) => {
-    
     const { email, name, image, password } = data;
     // console.log(name);
 
-    const {data : res, error} = await authClient.signUp.email({
+    const { data: res, error } = await authClient.signUp.email({
       name: name, // required
       email: email, // required
       password: password, // required
@@ -34,12 +45,17 @@ export default function SignUpPage() {
       callbackURL: "/",
     });
     console.log(res, error);
+    if (error) {
+      alert(error.message);
+    }
+    if (res) {
+      alert("Signed Up SuccessFully, Now You Can Get Started");
+    }
   };
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center py-4 px-4">
       <div className="card bg-base-100 border border-base-300 shadow-md w-full max-w-md">
         <div className="card-body gap-5">
-          {/* Header */}
           <div className="text-center">
             <h1 className="text-3xl font-bold tracking-tight text-gray-700">
               Create Account
@@ -51,7 +67,10 @@ export default function SignUpPage() {
 
           <div className="divider my-0" />
 
-          <form className="space-y-2" onSubmit={handleSubmit(handleSignUpFunction)}>
+          <form
+            className="space-y-2"
+            onSubmit={handleSubmit(handleSignUpFunction)}
+          >
             <fieldset>
               <label className="label py-0">
                 <span className="label-text text-gray-700 font-medium flex items-center gap-2">
@@ -60,6 +79,7 @@ export default function SignUpPage() {
                 </span>
               </label>
               <input
+                suppressHydrationWarning={true}
                 {...register("name", { required: "Name Field is Required" })}
                 {...register("name")}
                 type="text"
@@ -78,6 +98,7 @@ export default function SignUpPage() {
                 </span>
               </label>
               <input
+                suppressHydrationWarning={true}
                 {...register("image", {
                   required: "Image URL Field is Required",
                 })}
@@ -98,6 +119,7 @@ export default function SignUpPage() {
                 </span>
               </label>
               <input
+                suppressHydrationWarning={true}
                 {...register("email", { required: "Email Field is Required" })}
                 {...register("email")}
                 type="email"
@@ -117,28 +139,37 @@ export default function SignUpPage() {
               </label>
               <div className="relative">
                 <input
+                  suppressHydrationWarning={true}
                   {...register("password", {
                     required: "Password Field is Required",
                   })}
-                  type="password"
+                  type={isShowPass ? "text" : "password"}
                   minLength={8}
                   placeholder="Enter your password"
                   className="input input-bordered w-full pr-11 focus:input-primary"
                 />
                 <button
+                  suppressHydrationWarning={true}
+                  onClick={() => setIsShowPass(!isShowPass)}
                   type="button"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-base-content/40 hover:text-base-content transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-base-content/40 hover:text-base-content transition-colors cursor-pointer"
                 >
-                  <FaEye size={16} />
+                  {isShowPass ? <FaEye size={16} /> : <FaEyeSlash size={16}/>}
                 </button>
               </div>
               {errors.password && (
                 <p className="text-red-500">{errors.password.message}</p>
               )}
             </fieldset>
-            <button className="btn bg-violet-700 hover:bg-violet-600 text-white text-sm w-full mt-4">
+            <button
+              suppressHydrationWarning={true}
+              className="btn bg-violet-600 hover:bg-violet-500 text-white text-sm w-full mt-4"
+            >
               Register
             </button>
+            <button onClick={HandleGoogleSignIn}
+            suppressHydrationWarning={true}
+              className="btn btn-outline hover:bg-violet-100 border-gray-300 text-sm w-full"><FcGoogle />Continue With Google</button>
           </form>
           <p>
             Already have an account?{" "}

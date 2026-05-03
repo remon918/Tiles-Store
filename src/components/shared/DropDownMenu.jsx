@@ -9,6 +9,8 @@ const DropDownMenu = () => {
       <button
         onClick={() => setMenuOpen(!menuOpen)}
         className="flex flex-col gap-1.5 p-1 cursor-pointer"
+        // এটি ব্রাউজার এক্সটেনশন জনিত হাইড্রেশন এরর ফিক্স করবে
+        suppressHydrationWarning={true} 
       >
         <span className="block w-5 h-0.5 bg-gray-700"></span>
         <span className="block w-5 h-0.5 bg-gray-700"></span>
@@ -32,7 +34,7 @@ const DropDownMenu = () => {
             </NavLink>
           </li>
           <li className="border-b border-gray-700">
-            <NavLink href={"/tiles-cart"} onClick={() => setMenuOpen(false)}>
+            <NavLink href={"/my-tiles"} onClick={() => setMenuOpen(false)}>
               <span className="block px-4 py-3 text-sm text-gray-900 hover:bg-purple-500/20">
                 Tiles Cart
               </span>

@@ -78,7 +78,7 @@ const TilesDetailsPage = async ({ params }) => {
             >
               {inStock ? "● In Stock" : "● Out of Stock"}
             </span> <br /> <br />
-            <button className="btn bg-pink-600  hover:bg-pink-500 text-white">Add to Cart</button>
+            <button className="btn bg-pink-600  hover:bg-pink-500 text-white">{inStock ? "Place Order" : "Available in Pre Order"}</button>
           </div>
         </div>
       </div>

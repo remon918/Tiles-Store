@@ -1,6 +1,8 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   FaUser,
@@ -10,16 +12,26 @@ import {
   FaCheck,
   FaEye,
   FaRotateLeft,
+  FaEyeSlash,
 } from "react-icons/fa6";
 
 export default function LoginPage() {
   const { register,watch, handleSubmit, formState:{errors} } = useForm();
-console.log(watch("email"))
-  const handleLoginFunction = (data) => {
+// console.log(watch("email"))
+
+const [isShowPass, setIsShowPass] = useState(false);
+
+  const handleLoginFunction = async (data) => {
     // e.preventDefault();
     // const email = e.target.email.value;
     // const password = e.target.password.value;
-    console.log(data, "data");
+    const { data:res, error } = await authClient.signIn.email({
+      email: data.email, // required
+      password: data.password, // required
+      rememberMe: true,
+      callbackURL: "/",
+    });
+    console.log(res, error);
   };
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center py-4 px-4">
@@ -47,7 +59,6 @@ console.log(watch("email"))
               </label>
               <input
                 {...register("email", { required: "Email Field is Required" })}
-                {...register("email")}
                 type="email"
                 placeholder="john@example.com"
                 className="input input-bordered w-full focus:input-primary"
@@ -64,16 +75,17 @@ console.log(watch("email"))
               <div className="relative">
                 <input
                   {...register("password", { required: "Password Field is Required" })}
-                  type="password"
+                  type={ isShowPass ? "text" : "password"}
                   minLength={8}
                   placeholder="Enter your password"
                   className="input input-bordered w-full pr-11 focus:input-primary"
                 />
                 <button
+                onClick={() => setIsShowPass(!isShowPass)}
                   type="button"
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-base-content/40 hover:text-base-content transition-colors"
                 >
-                  <FaEye size={16} />
+                 {isShowPass ? <FaEye size={16} /> : <FaEyeSlash size={16}/>}
                 </button>
               </div>
               {errors.password && <p className="text-red-500">{errors.password.message}</p>}
