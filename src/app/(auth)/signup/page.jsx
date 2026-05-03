@@ -16,6 +16,7 @@ import {
   FaEyeSlash,
 } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 export default function SignUpPage() {
 
@@ -46,11 +47,11 @@ export default function SignUpPage() {
     });
     console.log(res, error);
     if (error) {
-      alert(error.message);
-    }
-    if (res) {
-      alert("Signed Up SuccessFully, Now You Can Get Started");
-    }
+          toast.error(error.message);
+        }
+        if (res) {
+          toast("Login SuccessFull, Now You Can Get Started");
+        }
   };
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center py-4 px-4">

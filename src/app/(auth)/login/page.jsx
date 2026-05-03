@@ -14,24 +14,45 @@ import {
   FaRotateLeft,
   FaEyeSlash,
 } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 export default function LoginPage() {
-  const { register,watch, handleSubmit, formState:{errors} } = useForm();
-// console.log(watch("email"))
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-const [isShowPass, setIsShowPass] = useState(false);
+  // console.log(watch("email"))
+
+  const HandleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    console.log(data, "data");
+  };
+
+  const [isShowPass, setIsShowPass] = useState(false);
 
   const handleLoginFunction = async (data) => {
     // e.preventDefault();
     // const email = e.target.email.value;
     // const password = e.target.password.value;
-    const { data:res, error } = await authClient.signIn.email({
+    const { data: res, error } = await authClient.signIn.email({
       email: data.email, // required
       password: data.password, // required
       rememberMe: true,
       callbackURL: "/",
     });
     console.log(res, error);
+    if (error) {
+      toast.error(error.message);
+    }
+    if (res) {
+      toast("Login SuccessFull, Now You Can Get Started");
+    }
   };
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center py-4 px-4">
@@ -49,7 +70,10 @@ const [isShowPass, setIsShowPass] = useState(false);
 
           <div className="divider my-0" />
 
-          <form className="space-y-2" onSubmit={handleSubmit(handleLoginFunction)}>
+          <form
+            className="space-y-2"
+            onSubmit={handleSubmit(handleLoginFunction)}
+          >
             <fieldset className="fieldset">
               <label className="label py-0">
                 <span className="label-text font-medium flex items-center text-gray-700 gap-2">
@@ -63,7 +87,9 @@ const [isShowPass, setIsShowPass] = useState(false);
                 placeholder="john@example.com"
                 className="input input-bordered w-full focus:input-primary"
               />
-              {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-red-500">{errors.email.message}</p>
+              )}
             </fieldset>
             <fieldset>
               <label className="label py-0">
@@ -74,24 +100,36 @@ const [isShowPass, setIsShowPass] = useState(false);
               </label>
               <div className="relative">
                 <input
-                  {...register("password", { required: "Password Field is Required" })}
-                  type={ isShowPass ? "text" : "password"}
+                  {...register("password", {
+                    required: "Password Field is Required",
+                  })}
+                  type={isShowPass ? "text" : "password"}
                   minLength={8}
                   placeholder="Enter your password"
                   className="input input-bordered w-full pr-11 focus:input-primary"
                 />
                 <button
-                onClick={() => setIsShowPass(!isShowPass)}
+                  onClick={() => setIsShowPass(!isShowPass)}
                   type="button"
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-base-content/40 hover:text-base-content transition-colors"
                 >
-                 {isShowPass ? <FaEye size={16} /> : <FaEyeSlash size={16}/>}
+                  {isShowPass ? <FaEye size={16} /> : <FaEyeSlash size={16} />}
                 </button>
               </div>
-              {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+              {errors.password && (
+                <p className="text-red-500">{errors.password.message}</p>
+              )}
             </fieldset>
             <button className="btn bg-violet-700 hover:bg-violet-600 text-white text-sm w-full mt-4">
               Login
+            </button>
+            <button
+              onClick={HandleGoogleSignIn}
+              suppressHydrationWarning={true}
+              className="btn btn-outline hover:bg-violet-100 border-gray-300 text-sm w-full"
+            >
+              <FcGoogle />
+              Login With Google
             </button>
           </form>
           <p>
